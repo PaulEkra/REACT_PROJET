@@ -11,12 +11,8 @@ export function Accueil() {
           <h2>Nos Services</h2>
           <div className={s.Services}>
             <div className={s.Service}>
-              <h3 id="formation-continue">Formation Continue</h3>
-              <p>Découvrez nos programmes de formation continue pour améliorer vos compétences.</p>
-            </div>
-            <div className={s.Service}>
-              <h3 id="formation-personnalisee">Formation Personnalisée</h3>
-              <p>Des formations adaptées à vos besoins spécifiques.</p>
+              <h3 id="formation">Formations</h3>
+              <p>Découvrez nos programmes de formations pour améliorer vos compétences.</p>
             </div>
             <div className={s.Service}>
               <h3 id="tutorat">Tutorat</h3>

@@ -19,8 +19,14 @@ export function Header(){
         </div>
         <h1>Bienvenue sur la plateforme YTG</h1>
         <p>
-        <Link to="/">Formation Continue</Link>  | 
-        <Link to="/">Formation Personnalisée</Link>  | 
+        {location.pathname !== "/" && (
+           <Link to="/">Accueil</Link>  
+        )}
+        {location.pathname !== "/" && " | "}
+        {location.pathname !== "/formations" && (
+        <Link to="/formations">Formations</Link> 
+        )}
+        {location.pathname !== "/formations" && " | "} 
         <Link to="/">Tutorat</Link> | 
         <Link to="/">Consultation</Link>  | 
         <Link to="/">Gestion de Cryptomonnaie</Link> |

@@ -1,41 +1,45 @@
+import React from "react";
 import s from "./style.module.css";
 import { Link } from "react-router-dom";
 import { Header } from "../header";
 
-
 export function Connexion() {
   return (
-    <div className={s.App}>
-      <Header/>
-      <form>
-            <h2 class="text-center mb-4">Connectez-vous</h2>
+    <div className={`p-4 min-h-screen bg-gray-100 ${s.App}`}>
+      <Header />
+      <form className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h2 className="text-center text-xl font-bold mb-4">Connectez-vous</h2>
 
-            <div className="row justify-content-center">
-              <div className="col-12 col-md-6 mb-2">
-                <label for="username">USERNAME</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="username"
-                  id="username"
-                  required
-                />
-              </div>
-              <div className="col-12 col-md-6 mb-2">
-                <label for="password">MOT DE PASSE</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  name="password"
-                  id="password"
-                  required
-                />
-              </div>
-            </div>
+        <div className="mb-4">
+          <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">USERNAME</label>
+          <input
+            type="text"
+            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            name="username"
+            id="username"
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">MOT DE PASSE</label>
+          <input
+            type="password"
+            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            name="password"
+            id="password"
+            required
+          />
+        </div>
 
-            <button type="submit" className="btn btn-primary mb-2 mx-auto">Connexion</button>
+        <button type="submit" className="w-full py-2 px-4 bg-blue-600 text-white rounded-md">
+          Connexion
+        </button>
       </form>
-     <Link to='/inscription'> Vous n'avez pas de compte? Inscrivez-vous</Link>
+      <div className="text-center mt-4">
+        <Link to='/inscription' className="text-blue-500">
+          Vous n'avez pas de compte? Inscrivez-vous
+        </Link>
+      </div>
     </div>
   );
 }
