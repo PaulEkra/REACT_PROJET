@@ -27,7 +27,10 @@ export function Header(){
         <Link to="/formations">Formations</Link> 
         )}
         {location.pathname !== "/formations" && " | "} 
-        <Link to="/">Tutorat</Link> | 
+        {location.pathname !== "/tutoriat" && (
+        <Link to="/tutoriat">Tutorat</Link>  
+        )}
+        {location.pathname !== "/tutoriat" && " | "} 
         <Link to="/">Consultation</Link>  | 
         <Link to="/">Gestion de Cryptomonnaie</Link> |
         <Link to="/about">A Propos</Link> 

@@ -9,6 +9,8 @@ import { Inscription } from './inscription/inscription';
 import { Accueil } from './Accueil/accueil';
 import { Propos } from './A propos/a_propos';
 import { Formations } from './Formations/formations';
+import { CourseDetail } from './CoursDetails/Cours';
+import { Tutoriat } from './Tutoriat/tutoriat';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,6 +25,9 @@ root.render(
         <Route path='/inscription' element={<div><Inscription/></div>}/>
         <Route path="/about" element={<div><Propos/></div>} />
         <Route path="/formations" element={<div><Formations/></div>} />
+        <Route path="/course/:courseId" element={<div><CourseDetail/></div>} />
+        <Route path="/tutoriat" element={<div><Tutoriat/></div>} />
+
       </Route>
     </Routes>
   </BrowserRouter>

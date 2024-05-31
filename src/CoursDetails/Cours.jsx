@@ -1,4 +1,6 @@
+// CourseDetail.jsx
 import React from "react";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import s from "./style.module.css";
 import { Header } from "../header";
@@ -51,26 +53,30 @@ const courses = [
     title: "Réseaux Informatique",
     description: "Acquérez des compétences en conception, configuration et gestion des réseaux informatiques pour assurer une connectivité optimale.",
     image: "https://th.bing.com/th/id/OIP.W8AUWCRJiSCA4OhbWMZW_QHaFj?pid=ImgDet&w=474&h=355&rs=1",
-    link: "https://www.e-university.site/course/reseaux-informatique"
+    link: "https://www.e-university.site/home/course/administration-reseaux-avancee/12"
   }
 ];
 
-export function Formations() {
+export function CourseDetail() {
+  const { courseId } = useParams();
+  const course = courses.find(c => c.id === courseId);
+
+  if (!course) {
+    return <p>Course not found!</p>;
+  }
+
   return (
     <div className={`p-4 min-h-screen bg-gray-100 ${s.App}`}>
       <Header />
-      <h1 className="text-center text-3xl font-bold mb-8">Formations Professionnelles</h1>
       <div className="container mx-auto">
-        {courses.map((course, index) => (
-          <div key={index} className="mb-8 bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold mb-2">{course.title}</h2>
-            <p className="mb-4">{course.description}</p>
-            <img src={course.image} alt={course.title} className="mb-4 w-full h-64 object-cover rounded-md" />
-            <Link to={`/course/${course.id}`} className="inline-block py-2 px-4 bg-blue-600 text-white rounded-md">
-              Voir Détails
-            </Link>
-          </div>
-        ))}
+        <h1 className="text-3xl font-bold mb-4">{course.title}</h1>
+        <img src={course.image} alt={course.title} className="mb-4 w-32 h-24 object-cover rounded-md" />
+        <p className="mb-4">{course.description}</p>
+        <a href={course.link} target="_blank" rel="noopener noreferrer" className="inline-block py-2 px-4 bg-blue-600 text-white rounded-md">
+          Inscription
+        </a>
+        <br />
+        <Link to="/formations" className="inline-block mt-4 text-blue-500">Retour aux formations</Link>
       </div>
     </div>
   );
