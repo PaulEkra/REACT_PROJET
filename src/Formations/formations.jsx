@@ -8,28 +8,28 @@ const courses = [
     id: "data-science",
     title: "Data Science",
     description: "Apprenez les techniques avancées de la science des données, incluant le traitement des données massives, l'analyse prédictive et le machine learning.",
-    image: "path/to/data-science-image.jpg",
+    image: "https://cdn.futura-sciences.com/buildsv6/images/wide1920/9/5/0/950321c11d_50173256_data-science-1.jpg",
     link: "https://www.e-university.site/course/data-science"
   },
   {
     id: "intelligence-artificielle",
     title: "Intelligence Artificielle",
     description: "Explorez les concepts fondamentaux et avancés de l'intelligence artificielle, y compris les réseaux neuronaux, le deep learning et les algorithmes génétiques.",
-    image: "path/to/ia-image.jpg",
+    image: "https://th.bing.com/th/id/OIP.wx-VAVMGHeK8UdgWYpzecgHaEU?rs=1&pid=ImgDetMain",
     link: "https://www.e-university.site/home/courses?category=certified-ai-developer"
   },
   {
     id: "blockchain-technology",
     title: "Blockchain Technology",
     description: "Découvrez les bases et les applications avancées de la technologie blockchain, ainsi que son impact sur les différents secteurs industriels.",
-    image: "path/to/blockchain-image.jpg",
+    image: "https://th.bing.com/th/id/R.e32faa7aeeb4fd4538bd617c18de42c0?rik=%2boRLaUoz0Adn1g&pid=ImgRaw&r=0",
     link: "https://www.e-university.site/course/blockchain-technology"
   },
   {
     id: "cybersecurity",
     title: "Cybersecurity",
     description: "Maîtrisez les aspects critiques de la cybersécurité, y compris la gestion des risques, la protection des données, et les stratégies de défense contre les cyberattaques.",
-    image: "path/to/cybersecurity-image.jpg",
+    image: "https://th.bing.com/th/id/R.d59ca1b02076f779c1ab0aa0168d2743?rik=miFuoT%2fMW0vkrg&pid=ImgRaw&r=0",
     link: "https://www.e-university.site/course/cybersecurity"
   },
   {
@@ -65,7 +65,7 @@ export function Formations() {
           <div key={index} className="mb-8 bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-2">{course.title}</h2>
             <p className="mb-4">{course.description}</p>
-            <img src={course.image} alt={course.title} className="mb-4 w-full h-64 object-cover rounded-md" />
+            <img src={course.image} alt={course.title} class="mb-4 w-32 h-24 object-cover rounded-md mx-auto" />
             <Link to={`/course/${course.id}`} className="inline-block py-2 px-4 bg-blue-600 text-white rounded-md">
               Voir Détails
             </Link>

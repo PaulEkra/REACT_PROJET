@@ -65,28 +65,37 @@ export function Tutoriat() {
     // Handle form submission, save data to the database
     console.log(formData);
   };
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
 
   return (
     <div className={`font-sans p-6 ${s.App}`}>
-      <Header />
+      <Header /> 
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-8">Cours Offerts</h1>
-        {courses.map((university) => (
-          <div key={university.university} className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">{university.university}</h2>
-            <ul>
-              {university.courses.map((course) => (
-                <li key={course.no} className="mb-4">
-                  <h3 className="text-xl font-semibold">{course.title}</h3>
-                  <p>{course.description}</p>
-                  <p className="font-bold">Coût mensuel: {course.cost}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <button onClick={toggleModal} className={` top-4 right-4 ${s.modalButton}`}>Inscrire à un cours</button>
 
-        <h1 className="text-3xl font-bold text-center mb-8">Inscription aux Cours</h1>
+  <h1 className="text-3xl font-bold text-center mb-8">Cours Offerts</h1>
+  {courses.map((university) => (
+    <div key={university.university} className={`${s.universityBlock} mb-8`}>
+      <h2 className="text-2xl font-semibold mb-4">{university.university}</h2>
+      <ul>
+        {university.courses.map((course) => (
+          <li key={course.no} className={`${s.courseBlock} mb-4`}>
+            <h3 className="text-xl font-semibold">{course.title}</h3>
+            <p>{course.description}</p>
+            <p className="font-bold">Coût mensuel: {course.cost}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+        ))}
+        {showModal && (
+  <div className={`${s.modal} fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center`}>
+    <div className={`${s.modalContent} bg-white p-6 rounded-lg`}>
+    <h1 className="text-3xl font-bold text-center mb-8">Inscription aux Cours</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
@@ -193,6 +202,12 @@ export function Tutoriat() {
             Inscription
           </button>
         </form>
+      <button onClick={toggleModal} className={`${s.closeButton}`}>Fermer</button>
+    </div>
+  </div>
+)}
+
+        
       </div>
     </div>
   );

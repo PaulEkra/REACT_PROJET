@@ -9,29 +9,51 @@ const courses = [
   {
     id: "data-science",
     title: "Data Science",
-    description: "Apprenez les techniques avancées de la science des données, incluant le traitement des données massives, l'analyse prédictive et le machine learning.",
-    image: "path/to/data-science-image.jpg",
+    description:`Description Complète 
+    La science des données est un domaine passionnant qui combine la statistique, l\'analyse mathématique, l\'informatique et la visualisation afin d\'extraire des connaissances significatives et impacter des coins divers de l\'industrie et recherche. Ce cours approfondi sur la science des données est conçu pour fournir aux étudiants une compréhension solide des principes fondamentaux ainsi qu\'une exposition aux techniques avancées utilisées dans le traitement des données.\
+    Objectifs du cours :
+    Fondamentaux Statistiques et Mathématiques : Construire une base solide en statistiques et en mathématiques qui supporte les techniques d'analyse de données.\
+    Analyse de Données en Profondeur : Apprendre à manipuler, nettoyer et analyser les données à travers des outils et langages modernes comme Python, R, SQL et Tableau.\
+    Machine Learning et Apprentissage Automatique : Comprendre et appliquer des algorithmes de machine learning, y compris l'apprentissage supervisé et non supervisé.\
+    Big Data Technologies : Gagner de l'expérience avec les architectures de big data comme Apache Hadoop et Spark pour gérer des volumes massifs de données.\
+    Visualisation de Données : Maîtriser les techniques avancées de visualisation pour représenter efficacement les données.\
+    Plan de Cours :\
+    Introduction et Histoire de la Data Science\
+    Statistiques pour la Data Science\
+    Programmation Python/R pour Data Science\
+    Extraction de Données et Nettoyage\
+    Introduction au Machine Learning\
+    Deep Learning et Neurones Artificiels\
+    Technologies de Big Data\
+    Visualisation Interactive de Données\
+    Gestion et Sécurité des Données\
+    Applications de Data Science dans Divers Secteurs\
+    Compétences Développées :\
+    Analytique Avancée : Compétence pour inspecter, nettoyer, transformer et modéliser les données.\
+    Résolution de Problèmes : Aptitude à utiliser des approches scientifiques et analytiques pour résoudre des problèmes complexes.\
+    Pensée Critique : Évaluer des méthodes, des résultats et des implications dans l'analyse de données.`,
+    image: "https://cdn.futura-sciences.com/buildsv6/images/wide1920/9/5/0/950321c11d_50173256_data-science-1.jpg",
     link: "https://www.e-university.site/course/data-science"
   },
   {
     id: "intelligence-artificielle",
     title: "Intelligence Artificielle",
     description: "Explorez les concepts fondamentaux et avancés de l'intelligence artificielle, y compris les réseaux neuronaux, le deep learning et les algorithmes génétiques.",
-    image: "path/to/ia-image.jpg",
+    image: "https://th.bing.com/th/id/OIP.wx-VAVMGHeK8UdgWYpzecgHaEU?rs=1&pid=ImgDetMain",
     link: "https://www.e-university.site/home/courses?category=certified-ai-developer"
   },
   {
     id: "blockchain-technology",
     title: "Blockchain Technology",
     description: "Découvrez les bases et les applications avancées de la technologie blockchain, ainsi que son impact sur les différents secteurs industriels.",
-    image: "path/to/blockchain-image.jpg",
+    image: "https://th.bing.com/th/id/R.e32faa7aeeb4fd4538bd617c18de42c0?rik=%2boRLaUoz0Adn1g&pid=ImgRaw&r=0",
     link: "https://www.e-university.site/course/blockchain-technology"
   },
   {
     id: "cybersecurity",
     title: "Cybersecurity",
     description: "Maîtrisez les aspects critiques de la cybersécurité, y compris la gestion des risques, la protection des données, et les stratégies de défense contre les cyberattaques.",
-    image: "path/to/cybersecurity-image.jpg",
+    image: "https://th.bing.com/th/id/R.d59ca1b02076f779c1ab0aa0168d2743?rik=miFuoT%2fMW0vkrg&pid=ImgRaw&r=0",
     link: "https://www.e-university.site/course/cybersecurity"
   },
   {
@@ -70,7 +92,7 @@ export function CourseDetail() {
       <Header />
       <div className="container mx-auto">
         <h1 className="text-3xl font-bold mb-4">{course.title}</h1>
-        <img src={course.image} alt={course.title} className="mb-4 w-32 h-24 object-cover rounded-md" />
+        <img src={course.image} alt={course.title} className=" mb-4 w-full h-64 object-cover rounded-md" />
         <p className="mb-4">{course.description}</p>
         <a href={course.link} target="_blank" rel="noopener noreferrer" className="inline-block py-2 px-4 bg-blue-600 text-white rounded-md">
           Inscription
